@@ -23,3 +23,10 @@ venv/
 __pycache__/
 .pytest_cache/
 .DS_Store
+
+# Build products and local runtime/toolchain files added for review packaging.
+backend/target/
+frontend/dist/
+tools/
+pg/data/
+*.log

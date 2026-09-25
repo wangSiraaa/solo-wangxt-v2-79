@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: licensing-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/licensing
+    username: licensing
+    password: licensing
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          # 所有 TIMESTAMP 读写统一按 UTC
+          time_zone: UTC
+  flyway:
+    enabled: true
+  jackson:
+    time-zone: UTC
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.flywaydb: info
