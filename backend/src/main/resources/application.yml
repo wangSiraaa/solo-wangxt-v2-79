@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: licensing-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/licensing
+    username: licensing
+    password: licensing
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+
+server:
+  port: 8080
+
+# 全部时间统一按 UTC 处理；授权窗口为 [valid_from, valid_to)：起始时刻包含，结束时刻不包含。
+app:
+  time-zone-note: "All instants are UTC. License windows are start-inclusive, end-exclusive."
